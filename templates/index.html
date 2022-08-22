@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button> <a href="/add_task"> 新增任务</a> </button>
+<table align="center" border="1" cellpadding="15px" >
+        <thead>
+            <tr>
+                <th>IP</th>
+                <th>任务名</th>
+                <th>执行时间</th>
+                <th>执行脚本</th>
+                <th>发送人员</th>
+                <th>接受聊天室</th>
+                <th>上次结果</th>
+                <th>上次执行日期</th>
+                <th>修改</th>
+                <th>删除</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+             <tr>
+                <th>ip</th>
+                <th>{{ item.task_name }}</th>
+                <th>{{ item.run_date}} </th>
+                <th>{{ item.run_code }}</th>
+                <th>{{ item.send_person }}</th>
+                <th>{{ item.send_room }}</th>
+                <th>{{ item.last_result }}</th>
+                <th>{{ item.last_rundate }}</th>
+                <th> 修改 </th>
+                <th> 删除 </th>
+             </tr>
+
+            {% endfor %}
+
+       </tbody>
+
+</table>
+
+
+
+</body>
+</html>

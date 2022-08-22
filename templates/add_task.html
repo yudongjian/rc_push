@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+    <script type="text/javascript">
+function beforeSubmit(form){
+if(form.run_date.value ==''){
+alert('运行时间不能为空！');
+form.username.focus();
+return false;
+}
+
+if(form.run_code.value ==''){
+alert('脚本不能为空！');
+form.password.focus();
+return false;
+}
+
+if(form.send_person.value ==''){
+alert('发送人员不能为空！');
+form.password.focus();
+return false;
+}
+
+if(form.send_room.value ==''){
+alert('发送房间不能为空！');
+form.password.focus();
+return false;
+}
+
+
+
+if(form.password.value.length<4){
+alert('密码至少为4位，请重新输入！');
+form.password.focus();
+return false;
+}
+if(form.password.value != form.password2.value) {
+alert('你两次输入的密码不一致，请重新输入！');
+form.password2.focus();
+return false;
+}
+return true;
+}
+</script>
+
+<body>
+
+
+<fieldset>
+   <legend>新增任务</legend>
+    <form method="post" name="form" action="/submit_task/" onSubmit="return beforeSubmit(this);">
+     <table border="0" width="50%" cellspacing="20" cellpadding="0">
+
+      <tr><td><label>任务名称：<input type="text" name="task_name" value=""></label></td></tr>
+      <tr><td><label>执行时间：<input type="datetime-local" name="run_date" value=""></label></td></tr>
+      <tr><td><label>执行脚本：<input type="text" name="run_code" value=""></label></td></tr>
+      <tr><td><label>发送人员：<input type="text" name="send_person" value=""></label></td></tr>
+      <tr><td><label>接收聊天室：<input type="text" name="send_room" value=""></label></td></tr>
+
+    <div id="box">
+        <label><input type="checkbox" name="all" checked="checked" value="T" />全选</label>
+        <label><input type="checkbox" name="Mon" value="T" />周一</label>
+        <label><input type="checkbox" name="Tues" value="T" />周二</label>
+        <label><input type="checkbox" name="Wednes" value="T" />周三</label>
+        <label><input type="checkbox" name="Thurs" value="T" />周四</label>
+        <label><input type="checkbox" name="Fri" value="T" />周五</label>
+        <label><input type="checkbox" name="Satur" value="T" />周六</label>
+        <label><input type="checkbox" name="Sun" value="T" />周日</label>
+    </div>
+
+{#      <tr><td><label>上次执行结果：<input type="text" name="last_time" value=""></label></td></tr>#}
+{#      <tr><td><label>上次执行日期：<input type="text" name="password2" value=""></label></td></tr>#}
+      <tr><td><input value="提交" type="submit"> </td></tr>
+     </table>
+    </form>
+</fieldset>
+
+</body>
+</html>
