@@ -5,10 +5,10 @@ from send_app import my_schedule
 
 
 # TODO 这里 run 调度方法
-# my_schedule.test()
+
 def index(request):
     data = models.task_info.objects.all()
-    return render(request, 'index.html', {'data': data})
+    return render(request, 'index.html', {'data': data,"data2": [1,2,3,4,5,6]})
 
 
 def add_task(request):

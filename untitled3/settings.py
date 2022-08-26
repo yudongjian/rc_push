@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'send_app.apps.SendAppConfig',
+    "django_apscheduler",
+
 ]
 
 MIDDLEWARE = [
