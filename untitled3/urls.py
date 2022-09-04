@@ -16,11 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from send_app import views
-from send_app.tests import scheduler
+from send_app import my_schedule
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('add_task/', views.add_task),
     path('submit_task/', views.submit_task),
+    path('del/', views.del_task),
+    path('switch/', views.switch_task),
 ]
 

@@ -5,42 +5,29 @@
     <title>Title</title>
 </head>
 
-    <script type="text/javascript">
+<script type="text/javascript">
 function beforeSubmit(form){
 if(form.run_date.value ==''){
 alert('运行时间不能为空！');
-form.username.focus();
+form.run_date.focus();
 return false;
 }
 
 if(form.run_code.value ==''){
 alert('脚本不能为空！');
-form.password.focus();
+form.run_code.focus();
 return false;
 }
 
 if(form.send_person.value ==''){
 alert('发送人员不能为空！');
-form.password.focus();
+form.send_person.focus();
 return false;
 }
 
 if(form.send_room.value ==''){
 alert('发送房间不能为空！');
-form.password.focus();
-return false;
-}
-
-
-
-if(form.password.value.length<4){
-alert('密码至少为4位，请重新输入！');
-form.password.focus();
-return false;
-}
-if(form.password.value != form.password2.value) {
-alert('你两次输入的密码不一致，请重新输入！');
-form.password2.focus();
+form.send_room.focus();
 return false;
 }
 return true;
@@ -61,20 +48,20 @@ return true;
       <tr><td><label>发送人员：<input type="text" name="send_person" value=""></label></td></tr>
       <tr><td><label>接收聊天室：<input type="text" name="send_room" value=""></label></td></tr>
 
-    <div id="box">
-        <label><input type="checkbox" name="all" checked="checked" value="T" />全选</label>
-        <label><input type="checkbox" name="Mon" value="T" />周一</label>
-        <label><input type="checkbox" name="Tues" value="T" />周二</label>
-        <label><input type="checkbox" name="Wednes" value="T" />周三</label>
-        <label><input type="checkbox" name="Thurs" value="T" />周四</label>
-        <label><input type="checkbox" name="Fri" value="T" />周五</label>
-        <label><input type="checkbox" name="Satur" value="T" />周六</label>
-        <label><input type="checkbox" name="Sun" value="T" />周日</label>
-    </div>
+{#    <div id="box">#}
+{#        <label><input type="checkbox" name="all" checked="checked" value="T" />全选</label>#}
+{#        <label><input type="checkbox" name="Mon" value="T" />周一</label>#}
+{#        <label><input type="checkbox" name="Tues" value="T" />周二</label>#}
+{#        <label><input type="checkbox" name="Wednes" value="T" />周三</label>#}
+{#        <label><input type="checkbox" name="Thurs" value="T" />周四</label>#}
+{#        <label><input type="checkbox" name="Fri" value="T" />周五</label>#}
+{#        <label><input type="checkbox" name="Satur" value="T" />周六</label>#}
+{#        <label><input type="checkbox" name="Sun" value="T" />周日</label>#}
+{#    </div>#}
 
 {#      <tr><td><label>上次执行结果：<input type="text" name="last_time" value=""></label></td></tr>#}
 {#      <tr><td><label>上次执行日期：<input type="text" name="password2" value=""></label></td></tr>#}
-      <tr><td><input value="提交" type="submit"> </td></tr>
+      <tr><td><input value="提交" type="submit"><input type="reset" value="重置"></td></tr> </td></tr>
      </table>
     </form>
 </fieldset>

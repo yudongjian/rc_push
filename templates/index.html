@@ -3,6 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+        table{
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table caption{
+    font-size: 2em;
+    font-weight: bold;
+    margin: 1em 0;
+}
+
+th,td{
+    border: 1px solid #999;
+    text-align: center;
+    padding: 20px 0;
+}
+
+table thead tr{
+    background-color: #008c8c;
+    color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+    background-color: #eee;
+}
+
+table tbody tr:hover{
+    background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+    color: #f40;
+}
+
+table tfoot tr td{
+    text-align: right;
+    padding-right: 20px;
+}
+
+
+    </style>
 </head>
 <body>
 <button> <a href="/add_task"> 新增任务</a> </button>
@@ -17,7 +59,7 @@
                 <th>接受聊天室</th>
                 <th>上次结果</th>
                 <th>上次执行日期</th>
-                <th>修改</th>
+                <th>开启/关闭</th>
                 <th>删除</th>
             </tr>
         </thead>
@@ -32,8 +74,8 @@
                 <th>{{ item.send_room }}</th>
                 <th>{{ item.last_result }}</th>
                 <th>{{ item.last_rundate }}</th>
-                <th> 修改 </th>
-                <th> 删除 </th>
+                <th> 现在状态为 {{ item.status }} || <a href="/switch?task_id={{ item.id }}&status={{ item.status }}">开关</a> </th>
+                 <th> <a href="/del?task_id={{ item.id }}">删除</a> </th>
              </tr>
 
             {% endfor %}
